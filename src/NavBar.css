@@ -1,0 +1,82 @@
+body{
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+.displayFlexNav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.divANavbar{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 50px;
+}
+.divANavbar a{
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 26px;
+    font-family: 'Bebas Neue', cursive;
+    transition: 0.3s ease-in;
+    -webkit-transition: 0.3s ease-in;
+    -moz-transition: 0.3s ease-in;
+    -o-transition: 0.3s ease-in;
+}
+.divANavbar a:hover{
+    color: #000;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 26px;
+    font-family: 'Bebas Neue', cursive;
+    background-color: #fff;
+    transition: 0.3s ease-in;
+    -webkit-transition: 0.3s ease-in;
+    -moz-transition: 0.3s ease-in;
+    -o-transition: 0.3s ease-in;
+}
+.navbar{
+    min-height: 10vh;
+    height: auto;
+    padding: 0 50px;
+    background-color: rgb(36, 38, 42);
+}
+.tituloNav{
+    font-size: 40px;
+    margin: 0 25px;
+    font-family: 'Karantina', cursive;
+    color:#fff!important;
+}
+.iconNav{
+    display: block;
+}
+
+@media only screen and (max-width: 677px){
+    .iconNav{
+        display: block;
+        margin: 0 auto;
+    }
+    .divANavbar{
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+}
+@media only screen and (min-width: 1920px){
+    .divANavbar a{
+        font-size: 34px;
+    }
+    .divANavbar a:hover{
+        font-size: 34px;
+    }
+}
+@media only screen and (min-width: 1600px){
+    .divANavbar a{
+        font-size: 30px;
+    }
+    .divANavbar a:hover{
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,194 @@
+.backgroundAzul{
+    background: #212e50 url(https://static-dm.akamaized.net/siege/prod/r6s-bg-default-repeat.jpg) 50% 50% repeat-y;
+}
+.DivAgentesLoadouts {
+    background-color: rgb(41, 41, 41);
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-top.png) 100% 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-left.png) 0 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-right.png) 100% 100% no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-down.png) 0 100% no-repeat;
+}
+.divDefesa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.divAtaque{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+.DivTituloDef {
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0;
+    margin-top: 50px;
+    background-color: rgb(255, 136, 38);
+}
+
+.DivTituloAtaq {
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0;
+    background-color: rgb(38, 78, 255);
+}
+
+.pDefAtaq {
+    margin-top: -6px;
+    font-size: 36px;
+    color: #fff;
+    font-family: 'Antonio', sans-serif;
+}
+
+.divAgenteThumbDef {
+    width: calc(12.5% - 10px);
+    background-color: rgba(255, 255, 255, 0.123);
+    margin: 5px;
+    text-decoration: none;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+    position: relative;
+}
+
+.divAgenteThumbDef:hover {
+    width: calc(12.5% - 10px);
+    background-color: rgb(255, 136, 38);
+    margin: 5px;
+    text-decoration: none;
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+}
+
+.divAgenteThumbAtaq {
+    width: calc(12.5% - 10px);
+    background-color: rgba(255, 255, 255, 0.123);
+    margin: 5px;
+    text-decoration: none;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+    position: relative;
+}
+
+.divAgenteThumbAtaq:hover {
+    width: calc(12.5% - 10px);
+    background-color: rgb(38, 78, 255);
+    margin: 5px;
+    text-decoration: none;
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+}
+
+.ThumbNomeAgente {
+    width: 100%;
+    height: 12%;
+    background-color: #000000c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.ThumbImgAgente {
+    width: 100%;
+    height: 88%;
+}
+
+.thumbOpImg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.iconOpImg {
+    display: block;
+    position: absolute;
+    top: 60%;
+    right: auto;
+    left: 50%;
+    bottom: auto;
+    margin: 0 -25%;
+    width: 50%;
+    height: auto;
+}
+
+.ThumbNomeAgente p {
+    font-size: 26px;
+    color: #fff;
+    font-family: 'Antonio', sans-serif;
+}
+
+.divOperadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+}
+
+.dpflexDivOperadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1280px) {
+    .divAgenteThumb {
+        width: calc(14% - 10px);
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .divAgenteThumb {
+        width: calc(14% - 10px);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .divAgenteThumb {
+        width: calc(16.6% - 10px);
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .divAgenteThumb {
+        width: 100px;
+        position: relative;
+    }
+}
