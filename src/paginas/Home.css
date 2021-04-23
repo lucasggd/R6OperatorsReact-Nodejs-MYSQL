@@ -1,0 +1,96 @@
+#dpflexHome{
+    display: flex;
+}
+#div1HomePage{
+    background: url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-top.png) 100% 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-left.png) 0 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-right.png) 100% 100% no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-down.png) 0 100% no-repeat;
+    background-color: rgb(255, 149, 62);
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+#div1HomePage:hover{
+    background: url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-top.png) 100% 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-left.png) 0 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-right.png) 100% 100% no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-down.png) 0 100% no-repeat;
+    background-color: rgb(255, 149, 62);
+    width: 60%;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+#div2HomePage{
+    background: url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-top.png) 100% 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-left.png) 0 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-right.png) 100% 100% no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-down.png) 0 100% no-repeat;
+    background-color: rgb(59, 95, 255);
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+#div2HomePage:hover{
+    background: url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-top.png) 100% 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-left.png) 0 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-right.png) 100% 100% no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-down.png) 0 100% no-repeat;
+    background-color: rgb(59, 95, 255);
+    width: 55%;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+.divHomeImg{
+    width: auto;
+    height: 300px;
+    position: relative;
+}
+.divHomeImg img{
+    max-height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+}
+#div1HomePage p{
+    color: #fff;
+    font-size: 46px;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 30px;
+}
+#div2HomePage p{
+    color: #fff;
+    font-size: 46px;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 30px;
+}
+#div1HomePage a{
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 40px;
+    background-color: rgb(38, 78, 255);
+    min-width: 120px;
+}
+#div2HomePage a{
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 40px;
+    background-color: rgb(255, 136, 38);
+    min-width: 120px;
+}

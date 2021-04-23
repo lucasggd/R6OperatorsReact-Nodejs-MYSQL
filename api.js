@@ -222,6 +222,18 @@ app.put('/put/op_ap/:id', (req, response) => {
     })
 });
 
+//////////////////////////////////////////////////////////////////////
+//                             TIMES                                //
+//////////////////////////////////////////////////////////////////////
+
+app.get('/times', (req, response) => {
+    con.query('select * from time', (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
 app.listen(3001, () => {
     console.log("Server is running on port 3001.");
 });

@@ -1,6 +1,6 @@
 import './Operadores.css';
 import axios from 'axios';
-import { createElement, useEffect } from 'react';
+import { useEffect } from 'react';
 
 const api = axios.create({
     baseURL: "http://localhost:3001",
