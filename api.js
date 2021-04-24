@@ -234,6 +234,39 @@ app.get('/times', (req, response) => {
             console.log(err)
     })
 });
+app.get('/time/:id', (req, response) => {
+    con.query('select * from time where id = ?',[req.params.id], (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
+app.get('/proplayer/by-time/:id', (req, response) => {
+    con.query('select * from proplayer where idtime = ?',[req.params.id], (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
+app.get('/proplayer/:nick', (req, response) => {
+    con.query('select * from proplayer where nick = ?',[req.params.nick], (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
+app.get('/proplayer/config/:id', (req, response) => {
+    con.query('select * from proplayer_config where idProplayer = ?',[req.params.id], (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
+
 app.listen(3001, () => {
     console.log("Server is running on port 3001.");
 });

@@ -1,0 +1,151 @@
+#mainDivProplayer {
+    height: 90vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+}
+
+#divImgProPlayer {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-top.png) 100% 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-left.png) 0 0 no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-lines-right.png) 100% 100% no-repeat,url(https://static-dm.akamaized.net/siege/prod/r6s-bg-gradient-down.png) 0 100% no-repeat;
+    background-color: #212e50;
+}
+
+#divImgProPlayer img {
+    height: 350px;
+    width: 350px;
+    border: solid rgb(24, 99, 185);
+    object-fit: cover;
+}
+
+#divProfileProPlayer {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #212e50 url(https://static-dm.akamaized.net/siege/prod/r6s-bg-default-repeat.jpg) 50% 50% repeat-y;
+}
+
+.divSobreProPlayer {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.divSobreProPlayer p {
+    color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+    padding: 0 5px;
+}
+
+#txtConfiguracao {
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#txtConfiguracao p {
+    text-align: center;
+    border-style: solid;
+}
+#divEquipamentosProPlayer{
+    min-height: 100vh;
+    width: 80%;
+    padding: 0 10%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+#txtEquipamentos{
+    color: #000;
+    font-size: 40px;
+    font-family: 'Balsamiq Sans', cursive;
+    text-align: center;
+    padding-top: 50px;
+}
+.divEquipamentos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    padding-bottom: 50px;
+}
+.divCDEquipamento{
+    width: calc(50% - 30px);
+    height: 450px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.tituloEquipamento{
+    color: #000;
+    margin-top: 15px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+}
+.nomeEquipamento{
+    color: #000;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 26px;
+}
+.divCDEquipamento img{
+    max-width: 100%;
+    margin-top: 4%;
+    max-height: 66%;
+}
+.divCDEquipamento a{
+    color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    background: #212e50 url(https://static-dm.akamaized.net/siege/prod/r6s-bg-default-repeat.jpg) 50% 50% repeat-y;
+    font-size: 26px;
+    padding:5px;
+    text-decoration: none;
+}
+@media only screen and (max-width: 1024px) {
+    .divCDEquipamento{
+        width: 100%;
+        height: 450px;
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .divSobreProPlayer p {
+        color: #fff;
+        font-size: 34px;
+        padding: 0 5px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #divImgProPlayer {
+        height: 40%;
+        width: 100%;
+    }
+    #divImgProPlayer img {
+        height: auto;
+        max-height: 95%;
+        width: auto;
+        max-width: 95%;
+    }
+    #divProfileProPlayer {
+        height: 60%;
+        width: 100%;
+    }
+    #mainDivProplayer {
+        flex-direction: column;
+    }
+    .divSobreProPlayer {
+        justify-content: center;
+    }
+}

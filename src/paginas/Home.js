@@ -7,7 +7,7 @@ function Home() {
                 <p>LOADOUTS AGENTES</p>
 
                 <div className="divHomeImg">
-                    <img src="./images/operador/caveira.png" />
+                    <img alt="" src="/images/operador/caveira.png" />
                 </div>
 
                 <a href="http://localhost:3000/operadores">Ver Loadouts</a>
@@ -16,7 +16,7 @@ function Home() {
                 <p>CONFIG PROPLAYERS</p>
 
                 <div className="divHomeImg">
-                    <img src="./images/proplayers/nesk.png" />
+                    <img alt="" src="/images/proplayer/neskp.png" />
                 </div>
 
                 <a href="http://localhost:3000/proplayers">Ver Configs</a>

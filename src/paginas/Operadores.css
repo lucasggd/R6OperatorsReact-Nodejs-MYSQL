@@ -169,25 +169,20 @@
 }
 
 @media only screen and (max-width: 1280px) {
-    .divAgenteThumb {
+    .divAgenteThumbDef {
         width: calc(14% - 10px);
     }
-}
-
-@media only screen and (max-width: 1280px) {
-    .divAgenteThumb {
+    .divAgenteThumbAtaq {
         width: calc(14% - 10px);
     }
 }
 
 @media only screen and (max-width: 1024px) {
-    .divAgenteThumb {
-        width: calc(16.6% - 10px);
+    .divAgenteThumbDef {
+        width: 100px;
+        position: relative;
     }
-}
-
-@media only screen and (max-width: 1024px) {
-    .divAgenteThumb {
+    .divAgenteThumbAtaq {
         width: 100px;
         position: relative;
     }

@@ -1,5 +1,108 @@
 #mainDivPro{
     width: 100%;
-    min-height: 90vh;
-    background-color: #333;
+    min-height: calc(90vh - 100px);
+    padding: 50px 0;
+    background: #0d0d0d url(https://static-dm.akamaized.net/siege/prod/r6s-bg-operators.jpg) 50% 50%;
+    display: flex;
+    justify-content: center;
+}
+#divPaiProplayer{
+    width: 90%;
+    display: flex;
+    justify-content: initial;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.divCDTimeIcon{
+    height: 200px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    text-decoration: none;
+}
+.divCDTime{
+    height: 200px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    text-decoration: none;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.0);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.0);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.0);
+    transition: all 200ms ease-in;
+    transform: scale(1.0);
+}
+.divCDTime:hover{
+    height: 200px;
+    width: 150px;
+    background-color: rgba(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 2px;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+}
+.divCDTime:hover p{
+    color: #000;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+}
+.divImgProplayer{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divImgProplayer img{
+    max-height: 90%;
+    max-width: 90%;
+}
+.divCDTimeIcon p{
+    height: 20%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Antonio', sans-serif;
+}
+.divCDTime p{
+    height: 20%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Antonio', sans-serif;
+}
+.divProplayersTimes{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1024px) {
+    .divProplayersTimes{
+        justify-content: center;
+    }
 }

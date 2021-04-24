@@ -94,3 +94,25 @@
     background-color: rgb(255, 136, 38);
     min-width: 120px;
 }
+@media only screen and (max-width: 650px) {
+    #div1HomePage{
+        width: 100%;
+        height: 45vh;
+    }
+    #div2HomePage{
+        width: 100%;
+        height: 45vh;
+    }
+    #dpflexHome{
+        flex-direction: column;
+    }
+    #div1HomePage:hover{
+        width: 100%;
+    }
+    #div2HomePage:hover{
+        width: 100%;
+    }
+    .divHomeImg{
+        display: none;
+    }
+}
