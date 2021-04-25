@@ -49,9 +49,11 @@
     margin-bottom: 50px;
 }
 
-#txtConfiguracao p {
+#txtConfiguracao h2 {
     text-align: center;
     border-style: solid;
+    font-size: 36px;
+    color: #fff;
 }
 #divEquipamentosProPlayer{
     min-height: 100vh;

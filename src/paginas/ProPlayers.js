@@ -1,6 +1,7 @@
 import './ProPlayers.css'
 import axios from 'axios';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 const api = axios.create({
     baseURL: "http://localhost:3001",
@@ -77,6 +78,10 @@ function ProPlayers() {
     }
     return (
         <div id="mainDivPro">
+            <Helmet>
+                <title>Pro Players BR - Rainbow Six</title>
+                <meta name="description" content="Configuração dos melhores jogadores de Rainbow Six do Brasil" />
+            </Helmet>
             <div id="divPaiProplayer">
             </div>
         </div>

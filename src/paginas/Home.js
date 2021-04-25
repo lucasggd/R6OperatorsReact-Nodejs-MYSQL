@@ -1,10 +1,15 @@
 import './Home.css';
+import { Helmet } from 'react-helmet';
 
 function Home() {
     return (
         <div id="dpflexHome">
+            <Helmet>
+                <title>R6 Configs</title>
+                <meta name="description" content="Configuração de proplayers e loadouts de agentes - Rainbow Six Siege" />
+            </Helmet>
             <div id="div1HomePage">
-                <p>LOADOUTS AGENTES</p>
+                <h2>LOADOUTS AGENTES</h2>
 
                 <div className="divHomeImg">
                     <img alt="" src="/images/operador/caveira.png" />
@@ -13,7 +18,7 @@ function Home() {
                 <a href="http://localhost:3000/operadores">Ver Loadouts</a>
             </div>
             <div id="div2HomePage">
-                <p>CONFIG PROPLAYERS</p>
+                <h2>CONFIG PROPLAYERS</h2>
 
                 <div className="divHomeImg">
                     <img alt="" src="/images/proplayer/neskp.png" />

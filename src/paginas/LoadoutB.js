@@ -2,6 +2,7 @@ import './LoadoutB.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const api = axios.create({
     baseURL: "http://localhost:3001",
@@ -52,12 +53,13 @@ function LoadoutB() {
     }, []);
 
     const [opFull, setopFull] = useState("");
-
+    
     let opF = 0;
     let mArmap = -1;
     let mArmas = -1;
     let mAcessorio = -1;
 
+    let description = opFull.nome + " - Dicas, loadout, melhor arma, configuração de armas, gadgets e tutoriais"
     const buscarArmap = (response) => {
         for (let i = 0; i < response.data.length; i++) {
             api.get(`/armaprimaria/` + response.data[i].id_armap)
@@ -166,7 +168,6 @@ function LoadoutB() {
     function setarArma(){
         api.get("/operador/" + opF + "/armaprimaria")
         .then((response) => {
-            console.log(response);
             for (let i = 0; i < response.data.length; i++) {
                 if (response.data[i].melhor === 1) {
                     mArmap = i;
@@ -224,17 +225,22 @@ function LoadoutB() {
     }
 
     return (
+        
         <div className="backgroundAzul">
+            <Helmet>
+                <title>{`${opFull.nome}`} - Rainbow Six Siege - Guia e Loadout</title>
+                <meta name="description" content={description} />
+            </Helmet>
             <a href="http://localhost:3000/operadores" className="backButton">
                 <p>Voltar</p>
             </a>
             <section className="mainDiv">
                 <div id="divTituloReserva">
-                    <p id="tituloReserva">{opFull.nome}</p>
+                    <h2 id="tituloReserva">{opFull.nome}</h2>
                 </div>
                 <div className="displayflex2">
                     <div className="displayCol" id="divOp">
-                        <p className="nomeOp">{opFull.nome}</p>
+                        <h2 className="nomeOp">{opFull.nome}</h2>
                         <img alt="" className="opIMG" src={opFull.img} />
                     </div>
                     <div className="mainDivLoadouts">

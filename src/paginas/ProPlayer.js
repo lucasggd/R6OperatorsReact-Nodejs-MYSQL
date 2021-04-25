@@ -2,6 +2,7 @@ import './ProPlayer.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const api = axios.create({
     baseURL: "http://localhost:3001",
@@ -9,13 +10,15 @@ const api = axios.create({
 
 function ProPlayer() {
     let { nick } = useParams();
-
     const [proFull, setproFull] = useState("");
     const [config, setconfig] = useState("");
+
 
     useEffect(() => {
         buscarApi();
     }, []);
+
+    let description = `${nick}` + " configurações do jogo, periféricos, fone, teclado, mouse e monitor";
 
     const buscarApi = () => {
         api.get(`/proplayer/${nick}`)
@@ -49,6 +52,10 @@ function ProPlayer() {
     }
     return (
         <div>
+            <Helmet>
+                <title>{`${proFull.nick}`} configs - Rainbow Six Siege</title>
+                <meta name="description" content={description} />
+            </Helmet>
             <a href="http://localhost:3000/proplayers" className="backButton">
                 <p>Voltar</p>
             </a>
@@ -58,7 +65,7 @@ function ProPlayer() {
                 </div>
                 <div id="divProfileProPlayer">
                     <div className="divSobreProPlayer" id="txtConfiguracao">
-                        <p>Configuração</p>
+                        <h2>{proFull.nick} Configuração</h2>
                     </div>
                     <div className="divSobreProPlayer">
                         <p>Nick:</p>
@@ -75,6 +82,10 @@ function ProPlayer() {
                     <div className="divSobreProPlayer">
                         <p>Proporção:</p>
                         <p>{config.prop}</p>
+                    </div>
+                    <div className="divSobreProPlayer">
+                        <p>Taxa de Atualização:</p>
+                        <p>{config.hz} Hz</p>
                     </div>
                     <div className="divSobreProPlayer">
                         <p>FOV:</p>

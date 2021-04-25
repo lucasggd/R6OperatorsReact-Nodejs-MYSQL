@@ -1,6 +1,7 @@
-import './Operadores.css';
 import axios from 'axios';
 import { useEffect } from 'react';
+import './Operadores.css';
+import { Helmet } from 'react-helmet';
 
 const api = axios.create({
     baseURL: "http://localhost:3001",
@@ -78,10 +79,14 @@ function Operadores() {
 
     return (
         <div className="backgroundAzul">
+            <Helmet>
+                <title>Agentes Rainbow Six Siege - Loadouts</title>
+                <meta name="description" content="Todos loadouts de agentes do Rainbow Six Siege" />
+            </Helmet>
             <section className="DivAgentesLoadouts">
                 <div className="divDefesa">
                     <div className="DivTituloDef">
-                        <p className="pDefAtaq">Loadout Defesa</p>
+                        <h2 className="pDefAtaq">Loadout Defesa</h2>
                         <img src="/images/defesaIcon.png" />
                     </div>
                     <div className="dpflexDivOperadores">
@@ -91,7 +96,7 @@ function Operadores() {
                 </div>
                 <div className="divAtaque">
                     <div className="DivTituloAtaq">
-                        <p className="pDefAtaq">Loadout Ataque</p>
+                        <h2 className="pDefAtaq">Loadout Ataque</h2>
                         <img src="/images/ataqueIcon.png" />
                     </div>
                     <div className="dpflexDivOperadores">
