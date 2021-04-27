@@ -8,61 +8,61 @@ const api = axios.create({
     baseURL: "http://localhost:3001",
 });
 
-function buscarCabo(id_cabo, arma){
+function buscarCabo(id_cabo, arma) {
     api.get(`/cabos-armas/` + id_cabo)
-                .then((res) => {
-                    var nomeL = document.getElementById(arma + "CaboNome");
-                    nomeL.innerHTML = res.data[0].nome;
-                    var imgL = document.getElementById(arma + "CaboImg");
-                    imgL.setAttribute("src", res.data[0].img)
-                })
-                .catch((err) => {
-                    console.error("ops! ocorreu um erro" + err);
-                });
+        .then((res) => {
+            var nomeL = document.getElementById(arma + "CaboNome");
+            nomeL.innerHTML = res.data[0].nome;
+            var imgL = document.getElementById(arma + "CaboImg");
+            imgL.setAttribute("src", res.data[0].img)
+        })
+        .catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+        });
 }
-function buscarCano(id_cano, arma){
+function buscarCano(id_cano, arma) {
     api.get(`/canos-armas/` + id_cano)
-                .then((res) => {
-                    var nomeL = document.getElementById(arma + "CanoNome");
-                    nomeL.innerHTML = res.data[0].nome;
-                    var imgL = document.getElementById(arma + "CanoImg");
-                    imgL.setAttribute("src", res.data[0].img)
-                })
-                .catch((err) => {
-                    console.error("ops! ocorreu um erro" + err);
-                });
+        .then((res) => {
+            var nomeL = document.getElementById(arma + "CanoNome");
+            nomeL.innerHTML = res.data[0].nome;
+            var imgL = document.getElementById(arma + "CanoImg");
+            imgL.setAttribute("src", res.data[0].img)
+        })
+        .catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+        });
 }
-function buscarMira(id_mira, arma){
+function buscarMira(id_mira, arma) {
     api.get(`/miras-armas/` + id_mira)
-                .then((res) => {
-                    var nomeL = document.getElementById(arma + "MiraNome");
-                    nomeL.innerHTML = res.data[0].nome;
-                    var imgL = document.getElementById(arma + "MiraImg");
-                    imgL.setAttribute("src", res.data[0].img)
-                })
-                .catch((err) => {
-                    console.error("ops! ocorreu um erro" + err);
-                });
+        .then((res) => {
+            var nomeL = document.getElementById(arma + "MiraNome");
+            nomeL.innerHTML = res.data[0].nome;
+            var imgL = document.getElementById(arma + "MiraImg");
+            imgL.setAttribute("src", res.data[0].img)
+        })
+        .catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+        });
 }
 
 function LoadoutB() {
     let { nome } = useParams();
-    
+
     useEffect(() => {
         buscarApi();
     }, []);
 
     const [opFull, setopFull] = useState("");
-    
+
     let opF = 0;
     let mArmap = -1;
     let mArmas = -1;
     let mAcessorio = -1;
 
     let description = opFull.nome + " - Dicas, loadout, melhor arma, configuração de armas, gadgets e tutoriais"
-    const buscarArmap = (response) => {
+    async function buscarArmap(response) {
         for (let i = 0; i < response.data.length; i++) {
-            api.get(`/armaprimaria/` + response.data[i].id_armap)
+            await api.get(`/armaprimaria/` + response.data[i].id_armap)
                 .then((res) => {
 
                     //<div className="armaL displayFlex better">
@@ -96,9 +96,9 @@ function LoadoutB() {
                 });
         }
     }
-    const buscarArmas = (response) => {
+    async function buscarArmas(response) {
         for (let i = 0; i < response.data.length; i++) {
-            api.get(`/armasecundaria/` + response.data[i].id_armas)
+            await api.get(`/armasecundaria/` + response.data[i].id_armas)
                 .then((res) => {
 
                     //<div className="armaL displayFlex">
@@ -132,9 +132,9 @@ function LoadoutB() {
                 });
         }
     }
-    const buscarAcessorio = (response) => {
+    async function buscarAcessorio(response) {
         for (let i = 0; i < response.data.length; i++) {
-            api.get(`/acessorio/` + response.data[i].id_acessorio)
+            await api.get(`/acessorio/` + response.data[i].id_acessorio)
                 .then((res) => {
 
                     //<div className="armaL displayFlex">
@@ -165,52 +165,98 @@ function LoadoutB() {
                 });
         }
     }
-    function setarArma(){
+    async function criarExpClasse(res) {
+        for (let i = 0; i < res.data.length; i++) {
+            console.log(res.data[i])
+            await api.get(`/classe/` + res.data[i].id_classe)
+                .then((response) => {
+                    console.log(res.data[i])
+                    var sec = document.getElementById("secClasseOp")
+                    if (i === 0) {
+                        var h2t = document.createElement("h2");
+                        h2t.setAttribute("class", "h2Estilojogo");
+                        h2t.innerHTML = "Estilo de jogo";
+                        sec.appendChild(h2t);
+                    }
+                    else {
+                        var h2t = document.createElement("h2");
+                        h2t.setAttribute("class", "h2Estilojogo");
+                        h2t.innerHTML = "OU";
+                        sec.appendChild(h2t);
+                    }
+                    sec.setAttribute("class", "secClasseOp")
+                    var div = document.createElement("div")
+                    div.setAttribute("class", "divClasseOp")
+                    var h2 = document.createElement("h2")
+                    h2.innerHTML = response.data[0].nome;
+
+                    var p = document.createElement("p")
+                    p.innerHTML = response.data[0].descricao;
+                    div.appendChild(h2);
+                    div.appendChild(p);
+                    sec.appendChild(div)
+                })
+                .catch((err) => {
+                    console.error("ops! ocorreu um erro" + err);
+                });
+        }
+
+    }
+    const buscarClasses = (opid) => {
+        api.get(`/operador/` + opid + "/classe")
+            .then((res) => {
+                criarExpClasse(res)
+            })
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+            });
+    }
+    function setarArma() {
         api.get("/operador/" + opF + "/armaprimaria")
-        .then((response) => {
-            for (let i = 0; i < response.data.length; i++) {
-                if (response.data[i].melhor === 1) {
-                    mArmap = i;
-                    buscarCabo(response.data[i].id_cabo, "armap");
-                    buscarCano(response.data[i].id_cano, "armap");
-                    buscarMira(response.data[i].id_mira, "armap");
+            .then((response) => {
+                for (let i = 0; i < response.data.length; i++) {
+                    if (response.data[i].melhor === 1) {
+                        mArmap = i;
+                        buscarCabo(response.data[i].id_cabo, "armap");
+                        buscarCano(response.data[i].id_cano, "armap");
+                        buscarMira(response.data[i].id_mira, "armap");
+                    }
                 }
-            }
-            buscarArmap(response);
-        })
-        .catch((err) => {
-            console.error("ops! ocorreu um erro" + err);
-        });
+                buscarArmap(response);
+            })
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+            });
 
-    api.get("/operador/" + opF + "/armasecundaria")
-        .then((response) => {
-            for (let i = 0; i < response.data.length; i++) {
-                if (response.data[i].melhor === 1) {
-                    mArmas = i;
-                    buscarCabo(response.data[i].id_cabo, "armas");
-                    buscarCano(response.data[i].id_cano, "armas");
-                    buscarMira(response.data[i].id_mira, "armas");
+        api.get("/operador/" + opF + "/armasecundaria")
+            .then((response) => {
+                for (let i = 0; i < response.data.length; i++) {
+                    if (response.data[i].melhor === 1) {
+                        mArmas = i;
+                        buscarCabo(response.data[i].id_cabo, "armas");
+                        buscarCano(response.data[i].id_cano, "armas");
+                        buscarMira(response.data[i].id_mira, "armas");
+                    }
                 }
-            }
-            buscarArmas(response);
-        })
-        .catch((err) => {
-            console.error("ops! ocorreu um erro" + err);
-        });
+                buscarArmas(response);
+            })
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+            });
 
-    api.get("/operador/" + opF + "/acessorio")
-        .then((response) => {
+        api.get("/operador/" + opF + "/acessorio")
+            .then((response) => {
 
-            for (let i = 0; i < response.data.length; i++) {
-                if (response.data[i].melhor === 1) {
-                    mAcessorio = i;
+                for (let i = 0; i < response.data.length; i++) {
+                    if (response.data[i].melhor === 1) {
+                        mAcessorio = i;
+                    }
                 }
-            }
-            buscarAcessorio(response);
-        })
-        .catch((err) => {
-            console.error("ops! ocorreu um erro" + err);
-        });
+                buscarAcessorio(response);
+            })
+            .catch((err) => {
+                console.error("ops! ocorreu um erro" + err);
+            });
     }
     const buscarApi = () => {
         api.get(`/operador/${nome}`)
@@ -218,6 +264,7 @@ function LoadoutB() {
                 setopFull(response.data[0])
                 opF = response.data[0].id;
                 setarArma();
+                buscarClasses(response.data[0].id)
             })
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
@@ -225,7 +272,7 @@ function LoadoutB() {
     }
 
     return (
-        
+
         <div className="backgroundAzul">
             <Helmet>
                 <title>{`${opFull.nome}`} - Rainbow Six Siege - Guia e Loadout</title>
@@ -262,39 +309,41 @@ function LoadoutB() {
                 <div className="divL">
                     <p className="titulosLoadout nomeArma" id="nomeArmaL1">N/A</p>
                     <div className="armaLoadout marginL displayFlex">
-                        <img alt="" className="imgL" id="armapImg"/>
+                        <img alt="" className="imgL" id="armapImg" />
                     </div>
                     <p className="titulosLoadout" id="armapCanoNome">N/A</p>
                     <div className="armaLoadout displayFlex">
-                        <img alt="" className="imgL" id="armapCanoImg"/>
+                        <img alt="" className="imgL" id="armapCanoImg" />
                     </div>
                     <p className="titulosLoadout" id="armapCaboNome">N/A</p>
                     <div className="armaLoadout displayFlex">
-                        <img alt="" className="imgL" id="armapCaboImg"/>
+                        <img alt="" className="imgL" id="armapCaboImg" />
                     </div>
                     <p className="titulosLoadout" id="armapMiraNome">N/A</p>
                     <div className="armaLoadout displayFlex">
-                        <img alt="" className="imgL" id="armapMiraImg"/>
+                        <img alt="" className="imgL" id="armapMiraImg" />
                     </div>
                 </div>
                 <div className="divL">
                     <p className="titulosLoadout nomeArma" id="nomeArmaL2">N/A</p>
                     <div className="armaLoadout displayFlex">
-                        <img alt="" className="imgL" id="armasImg"/>
+                        <img alt="" className="imgL" id="armasImg" />
                     </div>
                     <p className="titulosLoadout" id="armasCanoNome">N/A</p>
                     <div className="armaLoadout displayFlex">
-                        <img alt="" className="imgL" id="armasCanoImg"/>
+                        <img alt="" className="imgL" id="armasCanoImg" />
                     </div>
                     <p className="titulosLoadout" id="armasCaboNome">N/A</p>
                     <div className="armaLoadout displayFlex">
-                        <img alt="" className="imgL" id="armasCaboImg"/>
+                        <img alt="" className="imgL" id="armasCaboImg" />
                     </div>
                     <p className="titulosLoadout" id="armasMiraNome">N/A</p>
                     <div className="armaLoadout displayFlex">
-                        <img alt="" className="imgL" id="armasMiraImg"/>
+                        <img alt="" className="imgL" id="armasMiraImg" />
                     </div>
                 </div>
+            </section>
+            <section id="secClasseOp">
             </section>
         </div>
 

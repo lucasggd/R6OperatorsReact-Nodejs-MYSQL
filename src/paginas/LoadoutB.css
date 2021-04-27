@@ -222,8 +222,43 @@ p {
 #divTituloReserva{
     display: none;
 }
-
-
+.secClasseOp{
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    flex-direction: column;
+    background: url(https://wallpaperaccess.com/full/1423313.jpg) no-repeat;
+    background-color: #000;
+}
+.divClasseOp{
+    margin: 0 20%;
+    padding: 75px 5%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.divClasseOp p{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+    color: #fff;
+}
+.divClasseOp h2{
+    color: #ffb735;
+    margin-top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.divClasseOp b{
+    color: #ffb735;
+}
+.h2Estilojogo{
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 @media only screen and (min-width: 1920px) {
     .armaL {
         height: 150px;

@@ -6,7 +6,6 @@ import Operadores from './paginas/Operadores';
 import ProPlayers from './paginas/ProPlayers';
 import ProPlayer from './paginas/ProPlayer';
 import Home from './paginas/Home';
-import Atualizar_op_ap from './pageAdm/Atualizar_op_ap';
 import LoadoutB from './paginas/LoadoutB';
 
 const Routes = () => {
@@ -20,7 +19,6 @@ const Routes = () => {
             <Route path="/admin/post/op_ap" component={Op_ap}/>
             <Route path="/admin/post/op_as" component={Op_as}/>
             <Route path="/admin/post/op_ac" component={Op_ac}/>
-            <Route path="/admin/put/op_ap/:id" component={Atualizar_op_ap}/>
         </Switch>
     )
 }

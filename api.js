@@ -60,6 +60,24 @@ app.get('/operador/:id/acessorio', (req, response) => {
     })
 });
 
+app.get('/operador/:id/classe', (req, response) => {
+    con.query('select * from operador_classe where id_operador = ?', [req.params.id], (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
+
+app.get('/classe/:id', (req, response) => {
+    con.query('select * from classe where id = ?', [req.params.id], (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
+
 app.get('/op_ap/:id', (req, response) => {
     con.query('select * from operador_armap where id_operador = ?', [req.params.id], (err, res, fields) => {
         if (!err)
@@ -210,17 +228,6 @@ app.post('/post/op_ac', (req, response) => {
     })
 });
 
-//////////////////////////////////////////////////////////////////////
-//                              PUT                                 //
-//////////////////////////////////////////////////////////////////////
-app.put('/put/op_ap/:id', (req, response) => {
-    con.query("UPDATE operador_armap SET id_armap = ?, id_operador = ?, melhor = ?, id_mira = ?, id_cano = ?, id_cabo = ? WHERE condition", [req.body.id, req.body.id_armap, req.body.id_operador, req.body.melhor, req.body.id_mira, req.body.id_cano, req.body.id_cabo], (err, res, fields) => {
-        if (!err)
-            response.send(res)
-        else
-            console.log(err)
-    })
-});
 
 //////////////////////////////////////////////////////////////////////
 //                             TIMES                                //

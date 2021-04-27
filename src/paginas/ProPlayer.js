@@ -65,7 +65,7 @@ function ProPlayer() {
                 </div>
                 <div id="divProfileProPlayer">
                     <div className="divSobreProPlayer" id="txtConfiguracao">
-                        <h2>{proFull.nick} Configuração</h2>
+                        <h2>Configuração</h2>
                     </div>
                     <div className="divSobreProPlayer">
                         <p>Nick:</p>
