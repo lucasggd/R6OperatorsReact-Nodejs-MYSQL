@@ -47,9 +47,9 @@ function ProPlayers() {
             });
     }
 
-    function setarProplayers() {
+    async function setarProplayers() {
         for (let i = 0; i < idTimes.length; i++) {
-            api.get(`/proplayer/by-time/` + idTimes[i])
+            await api.get(`/proplayer/by-time/` + idTimes[i])
                 .then((response) => {
                     for (let u = 0; u < response.data.length; u++) {
                         var div = document.getElementById("timeid" + idTimes[i]);

@@ -228,6 +228,24 @@ app.post('/post/op_ac', (req, response) => {
     })
 });
 
+app.post('/post/op_cl', (req, response) => {
+    con.query("insert into operador_classe (id_classe, id_operador) VALUES (?, ?)", [req.body.id_classe, req.body.id_operador], (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
+
+app.get('/classes/', (req, response) => {
+    con.query('select * from classe order by nome ASC', (err, res, fields) => {
+        if (!err)
+            response.send(res)
+        else
+            console.log(err)
+    })
+});
+
 
 //////////////////////////////////////////////////////////////////////
 //                             TIMES                                //

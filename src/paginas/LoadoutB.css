@@ -259,6 +259,13 @@ p {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.8);
 }
+.h2Estilojogo2{
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    margin: 5px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
 @media only screen and (min-width: 1920px) {
     .armaL {
         height: 150px;

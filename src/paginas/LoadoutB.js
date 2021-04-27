@@ -59,7 +59,8 @@ function LoadoutB() {
     let mArmas = -1;
     let mAcessorio = -1;
 
-    let description = opFull.nome + " - Dicas, loadout, melhor arma, configuração de armas, gadgets e tutoriais"
+    let description = opFull.nome + " - R6 Siege Saiba qual é a melhor arma, gadget e estilos de jogo para acabar com os jogos de " + opFull.nome + " com as dicas dos proplayers!";
+    let favIcon = "/images/operadorIcon/" + opFull.nome + ".png";
     async function buscarArmap(response) {
         for (let i = 0; i < response.data.length; i++) {
             await api.get(`/armaprimaria/` + response.data[i].id_armap)
@@ -167,10 +168,8 @@ function LoadoutB() {
     }
     async function criarExpClasse(res) {
         for (let i = 0; i < res.data.length; i++) {
-            console.log(res.data[i])
             await api.get(`/classe/` + res.data[i].id_classe)
                 .then((response) => {
-                    console.log(res.data[i])
                     var sec = document.getElementById("secClasseOp")
                     if (i === 0) {
                         var h2t = document.createElement("h2");
@@ -180,8 +179,8 @@ function LoadoutB() {
                     }
                     else {
                         var h2t = document.createElement("h2");
-                        h2t.setAttribute("class", "h2Estilojogo");
-                        h2t.innerHTML = "OU";
+                        h2t.setAttribute("class", "h2Estilojogo2");
+                        h2t.innerHTML = "E/OU";
                         sec.appendChild(h2t);
                     }
                     sec.setAttribute("class", "secClasseOp")
@@ -277,6 +276,7 @@ function LoadoutB() {
             <Helmet>
                 <title>{`${opFull.nome}`} - Rainbow Six Siege - Guia e Loadout</title>
                 <meta name="description" content={description} />
+                <link rel="icon" type="imagem/png" href={favIcon} />
             </Helmet>
             <a href="http://localhost:3000/operadores" className="backButton">
                 <p>Voltar</p>
