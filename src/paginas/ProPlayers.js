@@ -28,7 +28,6 @@ function ProPlayers() {
                     a.setAttribute("class", "divCDTimeIcon");
 
                     var div1 = document.createElement("div");
-                    div1.setAttribute("class", "divImgProplayer");
                     var img = document.createElement("img");
                     img.setAttribute("src", response.data[i].icon_img);
 

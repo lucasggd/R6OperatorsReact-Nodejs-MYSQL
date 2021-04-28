@@ -22,6 +22,16 @@
     margin: 5px;
     text-decoration: none;
 }
+.divCDTimeIcon img{
+    max-height: 100%;
+    max-width: 90%;
+}
+.divCDTimeIcon div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+}
 .divCDTime{
     height: 200px;
     width: 150px;
@@ -77,8 +87,9 @@
     align-items: center;
 }
 .divImgProplayer img{
-    max-height: 90%;
-    max-width: 90%;
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
 }
 .divCDTimeIcon p{
     height: 20%;
