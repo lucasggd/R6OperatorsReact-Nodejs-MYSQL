@@ -21,9 +21,9 @@ p {
 .nomeOp {
     color: #fff;
     height: 10hv;
+    margin: 0;
+    padding-top: 5vh;
     text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
     font-size: 36px;
     font-family: 'Dela Gothic One', cursive;
 }
@@ -62,14 +62,6 @@ p {
     max-height: 100%;
     max-width: 100%;
     margin-left: 25px;
-}
-
-.nomeOp {
-    color: #fff;
-    text-align: center;
-    padding-top: 50px;
-    font-size: 36px;
-    font-family: 'Dela Gothic One', cursive;
 }
 
 .tituloOp {
@@ -268,24 +260,22 @@ p {
 }
 @media only screen and (min-width: 1920px) {
     .armaL {
-        height: 150px;
+        height: 125px;
         margin: 15px 15px 0 15px;
-        min-width: 350px;
+        min-width: 300px;
         background-color: rgba(0, 0, 0, 0.205);
         padding: 10px 10px 0 10px;
     }
     .opIMG {
         height: auto;
         width: auto;
-        max-height: 800px;
+        max-height: 75vh;
         max-width: 600px;
         margin-left: 25px;
     }
     .nomeOp {
         color: #fff;
         text-align: center;
-        padding-top: 40px;
-        padding-bottom: 40px;
         font-size: 46px;
         font-family: 'Dela Gothic One', cursive;
     }
@@ -316,6 +306,9 @@ p {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .divClasseOp{
+        margin: 0;
     }
 }
 
